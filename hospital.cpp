@@ -161,7 +161,6 @@ public:
 
     void print_patient_list()
     {
-        cout << "-----------------" << endl;
         cout << "LIST OF ALL PATIENTS: " << endl;
         for (int i=0; i<list_of_patient.size(); i++)
         {
@@ -172,7 +171,6 @@ public:
 
     void print_patient_under_12_list()
     {
-        cout << "-----------------" << endl;
         cout << "LIST OF UNDER 12 PATIENTS: " << endl;
         for (int i=0; i<list_of_patient.size(); i++)
         {
@@ -202,7 +200,16 @@ int main(){
     hospital.add_patient(p2);
     hospital.add_patient(p3);
     hospital.print_patient_list();
+    cout << "-----------------" << endl;
     hospital.print_patient_under_12_list();
-    cout << "Number of patients: " << hospital.count_patient();
+    cout << "Total number of patients: " << hospital.count_patient() << endl;
+
+    hospital.remove_patient(p3);
+    cout << "-----------------" << endl;
+    cout << "AFTER REMOVING A PATIENT" << endl;
+    hospital.print_patient_list();
+    cout << "-----------------" << endl;
+    hospital.print_patient_under_12_list();
+    cout << "Total number of patients: " << hospital.count_patient();
 	return 0;
 }
